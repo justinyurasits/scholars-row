@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-interface HeaderProps {
-  transparentOverHero?: boolean;
-}
-
-export function Header({ transparentOverHero = true }: HeaderProps) {
+export function Header() {
+  const pathname = usePathname();
+  const transparentOverHero = pathname === "/";
   const [scrolled, setScrolled] = useState(!transparentOverHero);
 
   useEffect(() => {

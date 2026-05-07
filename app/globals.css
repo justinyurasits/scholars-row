@@ -1177,6 +1177,224 @@ body::before {
 .cta-route:hover .cta-route-link .arrow { transform: translateX(4px); }
 
 /* ============================================
+   PAGE HERO (light background — Living Here, About, etc.)
+   ============================================ */
+.page-hero {
+  background: var(--field);
+  padding: var(--space-8) 0 var(--space-6);
+  position: relative;
+  z-index: 2;
+}
+.page-hero-eyebrow {
+  margin-bottom: var(--space-3);
+}
+.page-hero-headline {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 800px;
+  margin-bottom: var(--space-3);
+}
+.page-hero-headline em {
+  font-style: italic;
+  color: var(--accent);
+}
+.page-hero-sub {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--slate);
+  max-width: 560px;
+  font-weight: 400;
+}
+
+/* ============================================
+   SPLIT SECTION (two-column prose + visual)
+   ============================================ */
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+.split-prose {
+  max-width: 520px;
+}
+.split-body {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-weight: 400;
+  margin-bottom: var(--space-4);
+}
+.split-body.on-ink {
+  color: rgba(252, 250, 246, 0.78);
+  font-weight: 300;
+}
+
+/* Spec rows on light backgrounds */
+.specs-on-field {
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.5rem;
+}
+.specs-on-field .residence-spec-label {
+  color: var(--slate);
+}
+.specs-on-field .residence-spec-value {
+  color: var(--ink);
+}
+
+/* ============================================
+   IMAGE SLOT PLACEHOLDER
+   ============================================ */
+.image-slot {
+  border: 1px solid var(--rule);
+  background: var(--field-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+.image-slot.on-ink {
+  border-color: var(--rule-dark);
+  background: var(--ink-soft);
+}
+.image-slot-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--slate-soft);
+  text-align: center;
+  line-height: 1.6;
+}
+.image-slot.on-ink .image-slot-label {
+  color: rgba(252, 250, 246, 0.35);
+}
+
+/* ============================================
+   INCLUDED / OMITTED GRID (§07)
+   ============================================ */
+.included-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule-dark);
+  border: 1px solid var(--rule-dark);
+}
+.included-col {
+  background: var(--ink);
+  padding: var(--space-4);
+}
+.included-col-title {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  font-weight: 500;
+  margin-bottom: var(--space-3);
+}
+.included-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.included-item {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(252, 250, 246, 0.78);
+  font-weight: 300;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule-dark);
+}
+.included-item:last-child { border-bottom: none; }
+
+/* ============================================
+   PROCESS STEPS ON FIELD (§08)
+   ============================================ */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+.process-cell {
+  padding: var(--space-4) var(--space-3) var(--space-4) 0;
+  border-bottom: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+}
+.process-cell:last-child { border-right: none; padding-right: 0; }
+.process-cell:nth-child(1) { padding-left: 0; }
+.process-cell:nth-child(2) { padding-left: var(--space-3); }
+.process-cell:nth-child(3) { padding-left: var(--space-4); }
+.process-num {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+  display: block;
+}
+.process-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+.process-body {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--slate);
+  font-weight: 400;
+}
+
+/* ============================================
+   SIMPLE CTA (single-action — Living Here §09)
+   ============================================ */
+.section-simple-cta {
+  background: var(--field-deep);
+  padding: var(--space-7) 0 var(--space-6);
+  position: relative;
+  z-index: 2;
+}
+.simple-cta-headline {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: var(--space-3);
+}
+.simple-cta-headline em {
+  font-style: italic;
+  color: var(--accent);
+}
+.simple-cta-sub {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--slate);
+  max-width: 560px;
+  font-weight: 400;
+  margin-bottom: var(--space-4);
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 1000px) {
@@ -1210,6 +1428,16 @@ body::before {
   .standard-cell:nth-child(3)::after { left: 0; }
 
   .cta-routes { grid-template-columns: 1fr; }
+
+  .split-grid { grid-template-columns: 1fr; }
+
+  .included-grid { grid-template-columns: 1fr; }
+
+  .process-grid { grid-template-columns: 1fr; }
+  .process-cell {
+    border-right: none;
+    padding: var(--space-4) 0 !important;
+  }
 
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
